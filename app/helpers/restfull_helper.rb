@@ -1,0 +1,2 @@
+module RestfullHelper
+end

@@ -3,8 +3,8 @@ class RestfullController < ApplicationController
   default_search_scope :issues
 
 
-  before_filter :authorize, :except => [:index]
-  before_filter :find_optional_project, :only => [:index]
+  #before_filter :authorize
+  before_filter :find_optional_project
   accept_rss_auth :index
   accept_api_auth :index
 
@@ -94,6 +94,7 @@ private
 
   def find_project
     project_id = params[:project_id] || (params[:issue] && params[:issue][:project_id])
+    render :text => project_id
     @project = Project.find(project_id)
   rescue ActiveRecord::RecordNotFound
     render_404

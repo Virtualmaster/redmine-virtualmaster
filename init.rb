@@ -1,5 +1,7 @@
 require 'redmine'
 
+require_dependency 'virtualmaster/hooks'
+
 Redmine::Plugin.register :redmine_json_time_report do
   name 'Redmine Json Time Report plugin'
   author 'Jakub Kuchar'
@@ -8,3 +10,4 @@ Redmine::Plugin.register :redmine_json_time_report do
   url 'http://example.com/path/to/plugin'
   author_url 'http://example.com/about'
 end
+

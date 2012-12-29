@@ -33,5 +33,27 @@ POST /projects/virtualmaster-infrastructure/news.json
 
 see: app/views/hooks/_view_layouts_base_body_bottom.erb
 
+##Configuration
+Widget remote url is confgigurable by `widget_url` in `virtualmaster` plugin config
+section.
+
+##Development
+
+You can set source of loaded widget URL for deveopment porposes without
+changing plugin configuration and reloading ruby server by setting
+browsers `localStorage` variable.
+
+
+    > localStorage.virtualmaster_redmine_plugin_widget_url
+    =>"http://static.vmin.cz/redmine_billing/application.js"
+    > localStorage.virtualmaster_redmine_plugin_widget_url \
+    > = 'http://localhost:8080/redmine_billing/application.js'
+    =>"http://localhost:8080/redmine_billing/application.js" 
+
+
+**DO NOT FORGET TO SERVE IT WITH WIDE CORS HEADERS!**
+
+**DO NOT FORGET TO SWITCH IT BACK TO PRODUCTION URL!**
+
 ##FUTURE
 - let client set javscript to laod (dev/prod env, different extension for clients and admins )

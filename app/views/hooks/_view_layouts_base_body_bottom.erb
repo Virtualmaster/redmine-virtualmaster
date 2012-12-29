@@ -1,8 +1,29 @@
 <script language="javascript">
-  url = "http://static.vmin.cz/redmine_billing/application.js"
-  var oHead = document.getElementsByTagName('HEAD').item(0);
-  var oScript= document.createElement("script");
-  oScript.type = "text/javascript";
-  oScript.src=url;
-  oHead.appendChild( oScript);
+  VirtualmasterWidgetLoader = function(){
+    var default_url = "<%= Setting['plugin_virtualmaster']['widget_url']%>"
+
+    async_load_widget = function(url){
+      var oHead = document.getElementsByTagName('HEAD').item(0)
+      var oScript= document.createElement("script")
+      oScript.type = "text/javascript"
+      oScript.src=url
+      oHead.appendChild( oScript)
+    }
+  
+    get_widget_url_and_set_default_if_not_exists = function(){
+      if(typeof(Storage) == "undefined"){
+       url = default_url  
+      } else{
+       if(localStorage.virtualmaster_redmine_plugin_widget_url == undefined){
+         url = localStorage.virtualmaster_redmine_plugin_widget_url = default_url
+       } else {
+         url = localStorage.virtualmaster_redmine_plugin_widget_url
+       }
+      }
+      return url
+    }
+
+    widget_url = get_widget_url_and_set_default_if_not_exists()
+    async_load_widget(widget_url)
+  }()
 </script>

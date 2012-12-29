@@ -9,7 +9,7 @@ require 'dispatcher'
 Redmine::Plugin.register :virtualmaster do
   name 'Virtualmaster plugin'
   author 'Jakub Kuchar, Adam Kliment'
-  description 'REST AAP extension end async JS widget loader'
+  description 'REST API extension end async JS widget loader'
   version '0.0.1'
   url 'https://github.com/Virtualmaster/redmine-virtualmaster'
   #author_url 'http://example.com/about'

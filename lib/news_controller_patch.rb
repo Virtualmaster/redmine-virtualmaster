@@ -5,7 +5,6 @@ module NewsControllerPatch
      accept_api_auth :index, :create
 
      def create_with_plugin
-       puts "!!!!!!!!!!!!!!!! bang, patched controller!"
        begin
          @project = Project.find(params[:project_id])
        rescue ActiveRecord::RecordNotFound

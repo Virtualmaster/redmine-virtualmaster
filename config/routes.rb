@@ -1,4 +1,3 @@
 ActionController::Routing::Routes.draw do |map|
-  map.resources :json_time, :controller => 'restfull'
-  #map.connect '/restfull', :controller => 'restfull', :action => 'index'
+  map.resources :json_time, :controller => 'restfull_timelogs'
 end

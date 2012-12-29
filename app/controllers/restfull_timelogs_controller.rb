@@ -1,4 +1,4 @@
-class RestfullController < ApplicationController
+class RestfullTimelogsController < ApplicationController
   unloadable
   default_search_scope :issues
 
